@@ -1,5 +1,5 @@
 <?php 
-$compensation= "/JacobSite/src";//remove it when deployed in server;
+$compensation= "/color/";//remove it when deployed in server;
 $compensation="";
 ?>
 <script src="<?php echo $compensation;?>/bootstrap/js/jquery.min.js"></script>

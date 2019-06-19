@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb3" style="border-bottom:2px solid blue;">
 <div class="container">
-  <a href="#" class="navbar-brand"><b>Chasing After Wind</b></a>
+  <a href="#" class="navbar-brand"><b>COLOR - SCHOOL TERMINAL</b></a>
   <button class="navbar-toggler" data-toggle="collapse" data-target="#menu"><span class="navbar-toggler-icon"></span></button>
   <div class="navbar-collapse collapse" id="menu">
     <ul class="navbar-nav ml-auto">

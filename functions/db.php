@@ -1,6 +1,6 @@
 <?php
 $username='root';
-$password='lion';
+$password='';
 $host='localhost';
 $db='color';
 $port=3306;

@@ -17,7 +17,7 @@ while($r=fetch_array($rsl)){
 	$std=$r['std_name'];
 $html=<<<DELIMITER
 <div class="col-6 mt-3 text-center bg-info rounded-circle" style="">
-<span class="text-danger fa-3x fa fa-spinner fa-spin" ></span>
+<span class="text-danger fa-3x fa fa-spinner fa-pulse" ></span>
 <a href="" class="fa fa-3x" style="color:white;">$std</a>
 </div>
 DELIMITER;
@@ -40,7 +40,5 @@ echo $html;
 <div class="row bg-light text-secondary">
 <div class="col text-center"><span><span class="font-weight-bold">Minor Project for Dept. Of Electronics & Telecommunication , JECRC Foundation</span><br><span class="text-primary">Jacob V. Mahto</span> <br><span class="text-success"> Er. Mahesh Kumawat </span></span></div>
 </div>
-</div>
-
 </div>
 </body>

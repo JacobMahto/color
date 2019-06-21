@@ -1,4 +1,6 @@
 <?php
+include("includes/header.php");
+include("includes/nav.php");
 include("functions/db.php");
 $txt="SELECT * FROM std;";
 $rsl=query($txt);
@@ -7,33 +9,46 @@ $rsl=query($txt);
 //   echo "<br>";
 // }
 if(isset($_POST['click'])){
-  $std=$_POST['std'];
-  $sub=$_POST['sub'];
-  $path=$_POST['path'];
-  $head=$_POST['head'];
-  $topic=$_POST['topic'];
-  $type=$_POST['type'];
-  $txt="INSERT INTO files(std,sub,head,topic,type,path) VALUES($std,'$sub',$head,'$topic','$type','$path');";
-echo $txt;
-  query($txt);
+//Null allowed for following fields :"head (integer)" , "topic (text)" , "start_vid(text)" ,"end_vid(text)"  	
+$std=$_POST['std'];
+$sub=$_POST['sub'];
+$path=$_POST['path'];
+$head=$_POST['head'];
+$topic=$_POST['topic'];
+$type=$_POST['type'];
+$start_vid=$_POST['start_vid'];
+$stop_vid=$_POST['stop_vid'];
+//checking for null
+$head=($head==''?'NULL':$head);
+$topic=($topic==''?'NULL':"'".$topic."'");
+$start_vid=($start_vid==''?'NULL':"'".$start_vid."'");
+$stop_vid=($stop_vid==''?'NULL':"'".$stop_vid."'");
+
+//Mysql query Command
+$txt="INSERT INTO files(std,sub,head,topic,type,path,start_vid,stop_vid) VALUES($std,'$sub',$head,$topic,'$type','$path',$start_vid,$stop_vid);";
+$rsl=query($txt);
+confirm($rsl);
 }
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-<form method="post" action="insert.php">
-  <input type="number" placeholder="Enter Class" name="std">
-<input type="text" placeholder="Enter Subject" name="sub">
-<input type="number" placeholder="Enter Head" name="head">
-<input type="text" placeholder="Enter Topic" name="topic">
-<input type="text" placeholder="Enter video" name="type">
-<input type="text" placeholder="Enter path" name="path">
-<button type="submit" name="click">Hello</button>
-</form>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h3 class="display-4 bg-light text-primary text-center">Manual Asset Entry</h3>
+		<form class="form col-8 mx-auto" method="post" action="insert.php">
+			<input class="my-1 form-control" type="number" placeholder="Enter Class Code" name="std">
+			<input class="my-1 form-control" type="text" placeholder="Enter Subject Code" name="sub">
+			<input class="my-1 form-control" type="number" placeholder="Enter Head (Can be blank)" name="head">
+			<input class="my-1 form-control" type="text" placeholder="Enter Topic (Can be blank)" name="topic">
+			<input class="my-1 form-control" type="text" placeholder="Enter Asset Type (like video , audio , pdf ,etc.)" name="type">
+			<input class="my-1 form-control" type="text" placeholder="Enter path (like /asset/202/start.mp4)" name="path">
+			<input class="my-1 form-control" type="text" placeholder="Start(mmss) (Can be blank)" name="start_vid">
+			<input class="my-1 form-control" type="text" placeholder="Stop(mmss) (Can be blank)" name="stop_vid">
+			<button class="btn btn-outline-success w-100 "  type="submit" name="click">Add To Database</button>
+		</form>
 
-  </body>
+	</body>
 </html>

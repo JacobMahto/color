@@ -13,8 +13,9 @@ $compensation= "/color/";
   <link rel="stylesheet" href="<?php echo $compensation;?>/display/css/bootstrap.css">
   <!--<link rel="stylesheet" href="css/style.css">-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link href="<?php echo $compensation
+  <link href="<?php echo $compensation;
 ?>/display/js/video-js-7.5.5/video-js.css" rel="stylesheet">
-  <script src="<?php echo $compensation
+  <script src="<?php echo $compensation;
 ?>/display/js/video-js-7.5.5/video.js"></script>
+  <script src="<?php echo $compensation;?>/display/js/abloop/videojs-abloop.min.js"></script>
 </head>

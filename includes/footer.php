@@ -1,9 +1,9 @@
 <?php 
 $compensation= "/color/";//remove it when deployed in server;
-$compensation="";
+//$compensation="";
 ?>
-<script src="<?php echo $compensation;?>/bootstrap/js/jquery.min.js"></script>
-  <script src="<?php echo $compensation;?>/bootstrap/js/popper.min.js"></script>
-  <script src="<?php echo $compensation;?>/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo $compensation;?>/display/js/jquery.min.js"></script>
+  <script src="<?php echo $compensation;?>/display/js/popper.min.js"></script>
+  <script src="<?php echo $compensation;?>/display/js/bootstrap.min.js"></script>
 </body>
 </html>

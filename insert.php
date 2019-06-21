@@ -28,6 +28,10 @@ $stop_vid=($stop_vid==''?'NULL':"'".$stop_vid."'");
 $txt="INSERT INTO files(std,sub,head,topic,type,path,start_vid,stop_vid) VALUES($std,'$sub',$head,$topic,'$type','$path',$start_vid,$stop_vid);";
 $rsl=query($txt);
 confirm($rsl);
+$txt=<<<DELIMITER
+<h2 class="text-center"><a href="insert.php" style="color:red;">Add More Record</a></h2>
+DELIMITER;
+echo $txt;
 }
 ?>
 <!DOCTYPE html>
@@ -44,7 +48,7 @@ confirm($rsl);
 			<input class="my-1 form-control" type="number" placeholder="Enter Head (Can be blank)" name="head">
 			<input class="my-1 form-control" type="text" placeholder="Enter Topic (Can be blank)" name="topic">
 			<input class="my-1 form-control" type="text" placeholder="Enter Asset Type (like video , audio , pdf ,etc.)" name="type">
-			<input class="my-1 form-control" type="text" placeholder="Enter path (like /asset/202/start.mp4)" name="path">
+			<input class="my-1 form-control" type="text" placeholder="Enter path (like /assets/202/start.mp4)" name="path">
 			<input class="my-1 form-control" type="text" placeholder="Start(mmss) (Can be blank)" name="start_vid">
 			<input class="my-1 form-control" type="text" placeholder="Stop(mmss) (Can be blank)" name="stop_vid">
 			<button class="btn btn-outline-success w-100 "  type="submit" name="click">Add To Database</button>

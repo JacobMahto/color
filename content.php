@@ -3,8 +3,23 @@ include("includes/header.php");
 include("includes/nav.php");
 include("functions/db.php");
 //get class list
-$query="SELECT * FROM std WHERE std_code<200;";
-$rsl=query($query);
+if(isset($_GET['std_code']) && isset($_GET['sub_code'])){
+	$std_code=$_GET['std_code'];
+	$sub_code=$_GET['sub_code'];
+	//Getting Side Pane items
+	$query="SELECT heads.head,topic,path FROM files,heads WHERE sub_code=$std_code AND sub_code=$sub_code AND heads.sn=files.head GROUP BY topic;";	
+	$rsl1=query($query);
+	$now='';
+	$prev='';
+	for($now='';$now!="BREAK";$now){
+		$while($r=fetch_array($rsl1)){
+		$now=$r['heads'];
+	}}
+
+}
+else{
+	die("USEFUL PARAMETERS NOT SPECIFIED");
+}
 ?>
 <body>
 <div class=" container">

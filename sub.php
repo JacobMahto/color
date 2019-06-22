@@ -6,7 +6,7 @@ include("functions/db.php");
 $std='';
 if(isset($_GET['std'])){
 	$std=$_GET['std'];
-	$query_for_individual_sub="SELECT DISTINCT sub,sub_name from sub,files where sub_code=sub AND std=$std;";
+	$query_for_individual_sub="SELECT DISTINCT files.sub_code,sub.sub_name from sub,files where files.sub_code=sub.sub_code AND files.std_code=$std;";
 	$query_for_shared_sub="SELECT std_code,std_name FROM std WHERE std_code>200;";
 	$rsl1=query($query_for_individual_sub);
 	$rsl2=query($query_for_shared_sub);
@@ -28,7 +28,7 @@ DELIMITER;
 
 while($r=fetch_array($rsl2)){
 	$html .=<<<DELIMITER
-<div class="col-6"><a href="content.php?std_code=$std&sub_code=$r[0]" style="color:green;">$r[1]</a></div>
+<div class="col-6"><a href="content.php?std_code=$r[0]&sub_code=$r[0]" style="color:green;">$r[1]</a></div>
 DELIMITER;
 }
 

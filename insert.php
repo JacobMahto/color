@@ -25,7 +25,8 @@ $start_vid=($start_vid==''?'NULL':"'".$start_vid."'");
 $stop_vid=($stop_vid==''?'NULL':"'".$stop_vid."'");
 
 //Mysql query Command
-$txt="INSERT INTO files(std,sub,head,topic,type,path,start_vid,stop_vid) VALUES($std,'$sub',$head,$topic,'$type','$path',$start_vid,$stop_vid);";
+$txt="INSERT INTO files(std_code,sub_code,head,topic,type,path,start_vid,stop_vid) VALUES($std,'$sub',$head,$topic,'$type','$path',$start_vid,$stop_vid);";
+echo $txt;
 $rsl=query($txt);
 confirm($rsl);
 $txt=<<<DELIMITER

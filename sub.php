@@ -10,6 +10,8 @@ if(isset($_GET['std'])){
 	$query_for_shared_sub="SELECT std_code,std_name FROM std WHERE std_code>200;";
 	$rsl1=query($query_for_individual_sub);
 	$rsl2=query($query_for_shared_sub);
+	echo $query_for_individual_sub;
+	echo $query_for_shared_sub;
 }
 else{
 	echo "UNABLE TO DETECT STANDARD";

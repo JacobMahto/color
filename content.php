@@ -15,9 +15,9 @@ if(isset($_GET['std_code']) && isset($_GET['sub_code'])){
 		$head_code=$r1[0];
 		$head_name=$r1[1];
 		$html.=<<<DELIMITER
-<div class="row bg-danger text-light">$head_name</div>
+<div class="row justify-content-center bg-danger text-light">$head_name</div>
 DELIMITER;
-		$query="SELECT DISTINCT topic,path FROM heads,files WHERE files.head=$head_code AND std_code=$std_code AND sub_code=$sub_code;";
+		$query="SELECT DISTINCT topic FROM heads,files WHERE files.head=$head_code AND std_code=$std_code AND sub_code=$sub_code;";
 		$rsl2=query($query);
 		while($r2=fetch_array($rsl2)){
 			$html.=<<<DELIMITER
@@ -35,7 +35,7 @@ else{
 <body>
 <div class=" container-fluid">
 <div class="row">
-<div class="col-3">
+<div class="col-3 bg-light">
 <!-- LEFT PANE --!>
 <?php
 echo $html;
@@ -50,17 +50,23 @@ if(isset($_GET['std_code']) && isset($_GET['sub_code']) && isset($_GET['head_cod
 	$sub_code=$_GET['sub_code'];
 	$std_code=$_GET['std_code'];
 	$topic=$_GET['topic'];
-	$query="SELECT path FROM files WHERE topic='$topic' AND head=$head_code AND std_code=$std_code AND sub_code=$sub_code;";
+	$query="SELECT path,name FROM files WHERE topic='$topic' AND head=$head_code AND std_code=$std_code AND sub_code=$sub_code;";
 	$rsl3=query($query);
-	echo $query;
 	while($r3=fetch_array($rsl3)){
-		echo $r3[0];	
+		$name=$r3['name'];
 		$html=<<<DELIMITER
 
 <!-- IDEAL SETTING IF DATA INTIALISATION HAS TO BE DONE INSIDE THE VIDEO....IDEAL FOR PHP-->
+<div class="mb-3 col-5 ">
+<div class="row ">
 <video-js id="vid2" width="450" style="border:0.2px solid blue;"  loop controls preload="metadata" data-setup='{"playbackRates":[0.5,1,1.5,2],"plugins":{"abLoopPlugin":{"start":50,"end":55,"enabled":false,"loopIfBeforeStart":false,"loopIfAfterEnd":true,"pauseAfterLooping":false,"pauseBeforeLooping":false,"createButtons":true}},"userActions":{"doubleClick":true},"loop":true}'>
-<source src="/color/$r3[0]" type="video/mp4">
+<source src="/color$r3[0]" type="video/mp4">
 </video-js>
+</div>
+<div class="row justify-content-center text-light font-weight-bold bg-success ">
+$name
+</div>
+</div>
 DELIMITER;
 		echo $html;
 	}
@@ -72,9 +78,17 @@ DELIMITER;
 </video-js>
 --!>
 <!-- IDEAL SETTING IF DATA INTIALISATION HAS TO BE DONE INSIDE THE VIDEO....IDEAL FOR PHP-->
+<!--
+<div class="col">
+<div class="row">
 <video-js id="vid2" width="450" style="border:0.2px solid blue;"  loop controls preload="metadata" data-setup='{"playbackRates":[0.5,1,1.5,2],"plugins":{"abLoopPlugin":{"start":50,"end":55,"enabled":false,"loopIfBeforeStart":false,"loopIfAfterEnd":true,"pauseAfterLooping":false,"pauseBeforeLooping":false,"createButtons":true}},"userActions":{"doubleClick":true},"loop":true}'>
 <source src="/color/assets/vid1.mp4" type="video/mp4">
-</video-js>
+</video-js></div>
+<div class="row">
+Here I am
+</div>
+</div>
+-->
 </div>
 
 

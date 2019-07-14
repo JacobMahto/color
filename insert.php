@@ -16,6 +16,7 @@ $path=$_POST['path'];
 $head=$_POST['head'];
 $topic=$_POST['topic'];
 $type=$_POST['type'];
+$name=$_POST['name'];
 $start_vid=$_POST['start_vid'];
 $stop_vid=$_POST['stop_vid'];
 //checking for null
@@ -25,7 +26,7 @@ $start_vid=($start_vid==''?'NULL':"'".$start_vid."'");
 $stop_vid=($stop_vid==''?'NULL':"'".$stop_vid."'");
 
 //Mysql query Command
-$txt="INSERT INTO files(std_code,sub_code,head,topic,type,path,start_vid,stop_vid) VALUES($std,'$sub',$head,$topic,'$type','$path',$start_vid,$stop_vid);";
+$txt="INSERT INTO files(std_code,sub_code,head,topic,type,name,path,start_vid,stop_vid) VALUES($std,'$sub',$head,$topic,'$type','$name','$path',$start_vid,$stop_vid);";
 echo $txt;
 $rsl=query($txt);
 confirm($rsl);
@@ -49,6 +50,8 @@ echo $txt;
 			<input class="my-1 form-control" type="number" placeholder="Enter Head (Can be blank)" name="head">
 			<input class="my-1 form-control" type="text" placeholder="Enter Topic (Can be blank)" name="topic">
 			<input class="my-1 form-control" type="text" placeholder="Enter Asset Type (like video , audio , pdf ,etc.)" name="type">
+
+			<input class="my-1 form-control" type="text" placeholder="Name Alias to your asset" name="name">
 			<input class="my-1 form-control" type="text" placeholder="Enter path (like /assets/202/start.mp4)" name="path">
 			<input class="my-1 form-control" type="text" placeholder="Start(mmss) (Can be blank)" name="start_vid">
 			<input class="my-1 form-control" type="text" placeholder="Stop(mmss) (Can be blank)" name="stop_vid">

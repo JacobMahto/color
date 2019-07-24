@@ -44,10 +44,6 @@ echo $html;
 </div>
 
 </div>
-<hr class="bg-primary">
-<div class="row bg-light text-secondary">
-<div class="col text-center"><span><span class="font-weight-bold">Dept. Of Computer Science & Technology , /span><br><span class="text-primary">M.K. Public Sr. Sec. School</span> <br><span class="text-success"> www.jacob-tech.com </span></span></div>
-</div>
 </div>
 </body>
 <?php

@@ -96,6 +96,7 @@ Here I am
 </div>
 </div>
 </body>
+<!--
 <script>
 //initialise the video with the plugin and initial settings
 //NOT USED. BUT CAN BE USED IF VIDEOJS TAG INTIALISATION HAS TO BE DONE USING "ID" TAG , FROM OUTSIDE.
@@ -116,3 +117,8 @@ playbackRates: [0.5, 1, 1.5, 2],userActions:{doubleClick:true},loop:true,
 });
 video1.currentTime(120);
 </script>
+-->
+<?php
+include "includes/footer.php";
+?>
+

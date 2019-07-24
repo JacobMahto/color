@@ -1,5 +1,5 @@
 <?php
-$compensation= "/color/";
+$compensation= "/color";
 //$compensation="";//uncomment it when deployed in server;
 ?>
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ $compensation= "/color/";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Chasing After Wind</title>
+  <title>Color Terminal</title>
   <link rel="stylesheet" href="<?php echo $compensation;?>/display/css/bootstrap.min.css" >
   <link rel="stylesheet" href="<?php echo $compensation;?>/display/css/bootstrap.css">
   <!--<link rel="stylesheet" href="css/style.css">-->

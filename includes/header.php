@@ -18,6 +18,4 @@ $compensation= "/color";
   <script src="<?php echo $compensation;
 ?>/display/js/video-js-7.5.5/video.js"></script>
   <script src="<?php echo $compensation;?>/display/js/abloop/videojs-abloop.min.js"></script>
-
-  <script src="<?php echo $compensation;?>/display/js/videojs-overlay"></script>
 </head>
